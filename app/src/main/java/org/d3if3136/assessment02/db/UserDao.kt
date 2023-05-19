@@ -11,6 +11,6 @@ interface UserDao {
     @Insert
     fun insert(user: UserEntity)
 
-    @Query("SELECT * FROM user ORDER BY id DESC LIMIT 1")
-    fun getLastNama(): LiveData<UserEntity?>
+    @Query("SELECT * FROM user ORDER BY id DESC")
+    fun getLastUser(): LiveData<List<UserEntity>>
 }

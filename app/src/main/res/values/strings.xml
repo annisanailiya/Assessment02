@@ -13,4 +13,5 @@
         \n\nAplikasi ini dibuat dengan bertujuan untuk membantu memperkenalkan pahlawan-pahlawan Indonesia. Aplikasi ini berisikan 10 List nama Pahlawan Indonesia dan mengenalkan asal daerah beserta sejarah dari pahlawan tersebut.
         \n\nAplikasi ini dibuat untuk Assessment 02 Mobpro 1. Temukan kodenya di https://github.com/annisanailiya/Assessment02.git
         \n\nCopyright © 2023 Annisa Nailiya Zahroh \nAll rights reserved.</string>
+    <string name="belum_ada_data">Belum ada data</string>
 </resources>
