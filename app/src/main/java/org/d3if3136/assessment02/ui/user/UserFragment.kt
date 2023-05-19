@@ -9,9 +9,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import org.d3if3136.assessment02.R
 import org.d3if3136.assessment02.databinding.FragmentUserBinding
 import org.d3if3136.assessment02.db.UserDb
+import org.d3if3136.assessment02.model.HasilInput
 
 class UserFragment : Fragment() {
 
@@ -38,7 +41,6 @@ class UserFragment : Fragment() {
             )
         }
     }
-
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.options_menu, menu)
@@ -67,12 +69,16 @@ class UserFragment : Fragment() {
             return
         }
         val lanjut = nama
-        binding.namaTextView.text = getString(R.string.nama_x, lanjut)
 
+        binding.namaTextView.text = getString(R.string.nama_x, lanjut)
         binding.masukButton.visibility = View.VISIBLE
+        viewModel.welcome(
+            nama.toString()
+        )
     }
 
-//    private fun showResult(result: HasilInput) {
-//        binding.namaTextView.text = getString(R.string.nama_x,result.lanjut)
-//    }
+    private fun showResult(result: HasilInput) {
+        if (result == null) return
+
+    }
 }

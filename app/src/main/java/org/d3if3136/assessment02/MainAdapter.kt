@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import org.d3if3136.assessment02.databinding.ListItemBinding
+import org.d3if3136.assessment02.model.Pahlawan
 
 class MainAdapter(private val data: List<Pahlawan>) :
     RecyclerView.Adapter<MainAdapter.ViewHolder>() {

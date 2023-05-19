@@ -13,4 +13,7 @@ interface UserDao {
 
     @Query("SELECT * FROM user ORDER BY id DESC")
     fun getLastUser(): LiveData<List<UserEntity>>
+
+    @Query("DELETE FROM user")
+    fun clearData()
 }

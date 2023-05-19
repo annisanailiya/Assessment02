@@ -9,20 +9,21 @@ import kotlinx.coroutines.withContext
 import org.d3if3136.assessment02.db.UserDao
 import org.d3if3136.assessment02.db.UserEntity
 import org.d3if3136.assessment02.model.HasilInput
+import org.d3if3136.assessment02.model.welcome
 
 class UserViewModel(private val db: UserDao) : ViewModel() {
 
     private val hasilInput = MutableLiveData<HasilInput?>()
 
     fun welcome(nama: String) {
-        val lanjut = nama
-        hasilInput.value = HasilInput(lanjut)
+
+        val dataUser = UserEntity(
+            nama = nama
+        )
+        hasilInput.value = dataUser.welcome()
 
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
-                val dataUser = UserEntity(
-                    nama = nama
-                )
                 db.insert(dataUser)
             }
         }
