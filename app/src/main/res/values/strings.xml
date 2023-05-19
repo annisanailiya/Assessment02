@@ -6,4 +6,11 @@
     <string name="nama_x">Halo, %1$s</string>
     <string name="nama_invalid">Nama tidak boleh kosong</string>
     <string name="user_name">Masukkan Nama Anda</string>
+    <string name="message">%1$s diklik!</string>
+    <string name="masuk">Masuk Aplikasi</string>
+    <string name="tentang_aplikasi">Tentang Aplikasi</string>
+    <string name="copyright">Pahlawan Indonesia merujuk kepada orang-orang yang telah berperan penting dalam perjuangan kemerdekaan dan pembangunan Indonesia. Pahlawan Indonesia adalah simbol keberanian, dedikasi, dan pengabdian kepada negara.
+        \n\nAplikasi ini dibuat dengan bertujuan untuk membantu memperkenalkan pahlawan-pahlawan Indonesia. Aplikasi ini berisikan 10 List nama Pahlawan Indonesia dan mengenalkan asal daerah beserta sejarah dari pahlawan tersebut.
+        \n\nAplikasi ini dibuat untuk Assessment 02 Mobpro 1. Temukan kodenya di https://github.com/annisanailiya/Assessment02.git
+        \n\nCopyright © 2023 Annisa Nailiya Zahroh \nAll rights reserved.</string>
 </resources>

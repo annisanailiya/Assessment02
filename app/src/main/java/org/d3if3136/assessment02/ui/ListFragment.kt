@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import org.d3if3136.assessment02.MainAdapter
 import org.d3if3136.assessment02.Pahlawan
+import org.d3if3136.assessment02.R
 import org.d3if3136.assessment02.databinding.FragmentListBinding
 
 class ListFragment : Fragment() {
@@ -32,16 +33,16 @@ class ListFragment : Fragment() {
 
     private fun getData(): List<Pahlawan> {
         return listOf(
-            Pahlawan("Soekarno ", "Surabaya, Jawa Timur"),
-            Pahlawan("Mohammad Hatta", "Bukittinggi, Sumatera Barat"),
-            Pahlawan("Sultan Hasanuddin", "Gowa, Sulawesi Selatan"),
-            Pahlawan("Cut Nyak Dien", "Aceh, Sumatera Utara"),
-            Pahlawan("Diponegoro", "Yogyakarta, Jawa Tengah"),
-            Pahlawan("Tan Malaka", "Pandan Gadang, Sumatera Barat"),
-            Pahlawan("Ki Hajar Dewantara", "Yogyakarta, Jawa Tengah"),
-            Pahlawan("RA. Kartini", "Jepara, Jawa Tengah"),
-            Pahlawan("Teuku Umar", "Meulaboh, Aceh"),
-            Pahlawan("Agus Salim", "Padang Panjang, Sumatera Barat"),
+            Pahlawan("Soekarno ", "Surabaya, Jawa Timur", R.drawable.ic_launcher_background),
+            Pahlawan("Mohammad Hatta", "Bukittinggi, Sumatera Barat", R.drawable.ic_launcher_background),
+            Pahlawan("Sultan Hasanuddin", "Gowa, Sulawesi Selatan", R.drawable.ic_launcher_background),
+            Pahlawan("Cut Nyak Dien", "Aceh, Sumatera Utara", R.drawable.ic_launcher_background),
+            Pahlawan("Diponegoro", "Yogyakarta, Jawa Tengah", R.drawable.ic_launcher_background),
+            Pahlawan("Tan Malaka", "Pandan Gadang, Sumatera Barat", R.drawable.ic_launcher_background),
+            Pahlawan("Ki Hajar Dewantara", "Yogyakarta, Jawa Tengah", R.drawable.ic_launcher_background),
+            Pahlawan("RA. Kartini", "Jepara, Jawa Tengah", R.drawable.ic_launcher_background),
+            Pahlawan("Teuku Umar", "Meulaboh, Aceh", R.drawable.ic_launcher_background),
+            Pahlawan("Agus Salim", "Padang Panjang, Sumatera Barat", R.drawable.ic_launcher_background),
         )
     }
 }

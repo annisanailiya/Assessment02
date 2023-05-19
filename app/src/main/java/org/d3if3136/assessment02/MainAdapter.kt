@@ -2,6 +2,7 @@ package org.d3if3136.assessment02
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import org.d3if3136.assessment02.databinding.ListItemBinding
 
@@ -15,6 +16,11 @@ class MainAdapter(private val data: List<Pahlawan>) :
         fun bind(pahlawan: Pahlawan) = with(binding) {
             namaTextView.text = pahlawan.nama
             asalTextView.text = pahlawan.asal
+            imageView.setImageResource(pahlawan.imageResId)
+
+            root.setOnClickListener {
+                val message = root.context.getString(R.string.message, pahlawan.nama)
+                Toast.makeText(root.context, message, Toast.LENGTH_LONG).show() }
         }
     }
 

@@ -68,6 +68,22 @@
             app:layout_constraintTop_toBottomOf="@+id/lanjutButton"
             tools:text="Halo, Annisa" />
 
+        <Button
+            android:id="@+id/masukButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/masuk"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/namaTextView"
+            tools:visibility="visible" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
