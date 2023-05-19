@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun welcome() {
-        val nama = binding.namaEditText.text.toString()
+        val nama = binding.namaInp.text.toString()
         if (TextUtils.isEmpty(nama)) {
             Toast.makeText(this, R.string.nama_invalid, Toast.LENGTH_LONG).show()
             return

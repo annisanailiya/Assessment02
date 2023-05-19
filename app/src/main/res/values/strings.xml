@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">Craftify</string>
-    <string name="namaApk">Craftify</string>
+    <string name="app_name">Pahlawan Indonesia</string>
+    <string name="namaApk">Pahlawan Indonesia</string>
     <string name="nama">Nama</string>
     <string name="lanjut">Lanjut</string>
     <string name="nama_x">Halo, %1$s</string>
     <string name="nama_invalid">Nama tidak boleh kosong</string>
+    <string name="user_name">Masukkan Nama Anda</string>
 </resources>
