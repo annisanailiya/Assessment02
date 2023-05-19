@@ -1,26 +1,33 @@
-package org.d3if3136.assessment02
+package org.d3if3136.assessment02.ui
 
 import android.os.Bundle
-import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
-import org.d3if3136.assessment02.databinding.ActivityMenuBinding
+import org.d3if3136.assessment02.MainAdapter
+import org.d3if3136.assessment02.Pahlawan
+import org.d3if3136.assessment02.databinding.FragmentListBinding
 
-class MenuActivity : AppCompatActivity() {
+class ListFragment : Fragment() {
 
-    private lateinit var binding: ActivityMenuBinding
+    private lateinit var binding: FragmentListBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityMenuBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentListBinding.inflate(layoutInflater, container, false)
 
         with(binding.recyclerView) {
             addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
             adapter = MainAdapter(getData())
             setHasFixedSize(true)
         }
+
+        return binding.root
     }
 
     private fun getData(): List<Pahlawan> {
@@ -38,3 +45,4 @@ class MenuActivity : AppCompatActivity() {
         )
     }
 }
+
