@@ -3,7 +3,7 @@
     <string name="namaApk">Pahlawan Indonesia</string>
     <string name="nama">Nama</string>
     <string name="lanjut">Lanjut</string>
-    <string name="nama_x">Halo, %1$s</string>
+    <string name="nama_x">Halo, %1$s, \nGenerasi Muda Bangsa Indonesia \nSalam patriotik untukmu, Pahlawan Indonesia!</string>
     <string name="nama_invalid">Nama tidak boleh kosong</string>
     <string name="user_name">Masukkan Nama Anda</string>
     <string name="message">%1$s diklik!</string>
@@ -19,4 +19,7 @@
     <string name="hapus">Hapus</string>
     <string name="batal">Batal</string>
     <string name="action_switch_layout">Switch Layout</string>
+    <string name="bagikan">Bagikan Riwayat</string>
+    <string name="bagikan_template">%1$s,
+    Mengenal 10 Pahlawan Indonesia : Dr. Ir. Soekarno, Dr. Mohammad Hatta, Sultan Muhammad Hasanuddin, Tjoet Nyak Dhien, Raden Mas Ontowiryo Diponegoro, Ibrahim Datuk Tan Malaka, Raden Mas Soewardi Soerjaningrat, Raden Adjeng Kartini, Teuku Umar, Haji Agus Salim bin Abdullah Al-Malik Al-Husaini</string>
 </resources>

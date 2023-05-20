@@ -1,5 +1,6 @@
 package org.d3if3136.assessment02.ui.user
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
@@ -40,7 +41,21 @@ class UserFragment : Fragment() {
                 R.id.action_userFragment_to_listFragment
             )
         }
+        binding.shareButton.setOnClickListener { shareData() }
     }
+
+    private fun shareData() {
+        val message = getString(R.string.bagikan_template,
+            binding.namaTextView.text
+        )
+        val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.setType("text/plain").putExtra(Intent.EXTRA_TEXT, message)
+        if (shareIntent.resolveActivity(
+                requireActivity().packageManager) != null) {
+            startActivity(shareIntent)
+        }
+    }
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.options_menu, menu)
@@ -71,7 +86,7 @@ class UserFragment : Fragment() {
         val lanjut = nama
 
         binding.namaTextView.text = getString(R.string.nama_x, lanjut)
-        binding.masukButton.visibility = View.VISIBLE
+        binding.buttonGroup.visibility = View.VISIBLE
         viewModel.welcome(
             nama.toString()
         )

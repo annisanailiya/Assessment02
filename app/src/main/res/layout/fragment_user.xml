@@ -63,6 +63,7 @@
             android:fontFamily="@font/aclonica"
             android:textColor="@color/teal_700"
             android:textSize="20sp"
+            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lanjutButton"
@@ -74,14 +75,31 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="50dp"
-            android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:text="@string/masuk"
-            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/shareButton"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/namaTextView"
+            app:layout_constraintTop_toBottomOf="@+id/namaTextView" />
+
+        <Button
+            android:id="@+id/shareButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/bagikan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/masukButton"
+            app:layout_constraintTop_toTopOf="@+id/masukButton" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/buttonGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:constraint_referenced_ids="masukButton,shareButton"
             tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

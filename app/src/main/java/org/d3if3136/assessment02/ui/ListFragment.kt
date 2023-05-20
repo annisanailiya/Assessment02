@@ -41,16 +41,16 @@ class ListFragment : Fragment() {
 
     private fun getData(): List<Pahlawan> {
         return listOf(
-            Pahlawan("Soekarno ", "Surabaya, Jawa Timur", R.drawable.ic_launcher_background),
-            Pahlawan("Mohammad Hatta", "Bukittinggi, Sumatera Barat", R.drawable.ic_launcher_background),
-            Pahlawan("Sultan Hasanuddin", "Gowa, Sulawesi Selatan", R.drawable.ic_launcher_background),
-            Pahlawan("Cut Nyak Dien", "Aceh, Sumatera Utara", R.drawable.ic_launcher_background),
-            Pahlawan("Diponegoro", "Yogyakarta, Jawa Tengah", R.drawable.ic_launcher_background),
-            Pahlawan("Tan Malaka", "Pandan Gadang, Sumatera Barat", R.drawable.ic_launcher_background),
-            Pahlawan("Ki Hajar Dewantara", "Yogyakarta, Jawa Tengah", R.drawable.ic_launcher_background),
-            Pahlawan("RA. Kartini", "Jepara, Jawa Tengah", R.drawable.ic_launcher_background),
-            Pahlawan("Teuku Umar", "Meulaboh, Aceh", R.drawable.ic_launcher_background),
-            Pahlawan("Agus Salim", "Padang Panjang, Sumatera Barat", R.drawable.ic_launcher_background),
+            Pahlawan("Soekarno ", "Surabaya, Jawa Timur", "Soekarno adalah Proklamator Kemerdekaan Indone..."),
+            Pahlawan("Mohammad Hatta", "Bukittinggi, Sumatera Barat", "Muhammad Hatta, atau Dr. Mohammad Hatta, ad..."),
+            Pahlawan("Sultan Hasanuddin", "Gowa, Sulawesi Selatan", "Sultan Hasanuddin adalah pahlawan nasional ..."),
+            Pahlawan("Cut Nyak Dien", "Aceh, Sumatera Utara", "Cut Nyak Dien adalah pahlawan nasional Indones..."),
+            Pahlawan("Diponegoro", "Yogyakarta, Jawa Tengah", "Diponegoro adalah pahlawan nasional Indones..."),
+            Pahlawan("Tan Malaka", "Pandan Gadang, Sumatera Barat", "Tan Malaka adalah seorang tokoh revolusione..."),
+            Pahlawan("Ki Hajar Dewantara", "Yogyakarta, Jawa Tengah", "Ki Hajar Dewantara adalah seorang pendidik ..."),
+            Pahlawan("RA. Kartini", "Jepara, Jawa Tengah", "R.A. Kartini adalah seorang pahlawan nasion..."),
+            Pahlawan("Teuku Umar", "Meulaboh, Aceh", "Teuku Umar adalah pahlawan nasional Indones..."),
+            Pahlawan("Agus Salim", "Padang Panjang, Sumatera Barat", "Agus Salim adalah seorang tokoh nasional In..."),
         )
     }
 
