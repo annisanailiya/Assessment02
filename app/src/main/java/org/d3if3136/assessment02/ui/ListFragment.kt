@@ -41,16 +41,16 @@ class ListFragment : Fragment() {
 
     private fun getData(): List<Pahlawan> {
         return listOf(
-            Pahlawan("Soekarno ", "Surabaya, Jawa Timur", "Soekarno adalah Proklamator Kemerdekaan Indone..."),
-            Pahlawan("Mohammad Hatta", "Bukittinggi, Sumatera Barat", "Muhammad Hatta, atau Dr. Mohammad Hatta, ad..."),
-            Pahlawan("Sultan Hasanuddin", "Gowa, Sulawesi Selatan", "Sultan Hasanuddin adalah pahlawan nasional ..."),
-            Pahlawan("Cut Nyak Dien", "Aceh, Sumatera Utara", "Cut Nyak Dien adalah pahlawan nasional Indones..."),
-            Pahlawan("Diponegoro", "Yogyakarta, Jawa Tengah", "Diponegoro adalah pahlawan nasional Indones..."),
-            Pahlawan("Tan Malaka", "Pandan Gadang, Sumatera Barat", "Tan Malaka adalah seorang tokoh revolusione..."),
-            Pahlawan("Ki Hajar Dewantara", "Yogyakarta, Jawa Tengah", "Ki Hajar Dewantara adalah seorang pendidik ..."),
-            Pahlawan("RA. Kartini", "Jepara, Jawa Tengah", "R.A. Kartini adalah seorang pahlawan nasion..."),
-            Pahlawan("Teuku Umar", "Meulaboh, Aceh", "Teuku Umar adalah pahlawan nasional Indones..."),
-            Pahlawan("Agus Salim", "Padang Panjang, Sumatera Barat", "Agus Salim adalah seorang tokoh nasional In..."),
+            Pahlawan("Soekarno ", "Surabaya, Jawa Timur", "Soekarno adalah Proklamator Kemerdekaan Indone...", R.drawable.soekarno),
+            Pahlawan("Mohammad Hatta", "Bukittinggi, Sumatera Barat", "Muhammad Hatta, atau Dr. Mohammad Hatta, ad...", R.drawable.mohammadhatta),
+            Pahlawan("Sultan Hasanuddin", "Gowa, Sulawesi Selatan", "Sultan Hasanuddin adalah pahlawan nasional ...", R.drawable.sultanhasanuddin),
+            Pahlawan("Cut Nyak Dien", "Aceh, Sumatera Utara", "Cut Nyak Dien adalah pahlawan nasional Indones...", R.drawable.cutnyakdien),
+            Pahlawan("Diponegoro", "Yogyakarta, Jawa Tengah", "Diponegoro adalah pahlawan nasional Indones...", R.drawable.diponegoro),
+            Pahlawan("Tan Malaka", "Pandan Gadang, Sumatera Barat", "Tan Malaka adalah seorang tokoh revolusione...", R.drawable.tanmalaka),
+            Pahlawan("Ki Hajar Dewantara", "Yogyakarta, Jawa Tengah", "Ki Hajar Dewantara adalah seorang pendidik ...", R.drawable.kihajardewantara),
+            Pahlawan("RA. Kartini", "Jepara, Jawa Tengah", "R.A. Kartini adalah seorang pahlawan nasion...", R.drawable.rakartini),
+            Pahlawan("Teuku Umar", "Meulaboh, Aceh", "Teuku Umar adalah pahlawan nasional Indones...", R.drawable.teukuumar),
+            Pahlawan("Agus Salim", "Padang Panjang, Sumatera Barat", "Agus Salim adalah seorang tokoh nasional In...", R.drawable.agusalim),
         )
     }
 

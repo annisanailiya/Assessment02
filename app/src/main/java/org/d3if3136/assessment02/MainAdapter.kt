@@ -18,7 +18,7 @@ class MainAdapter(private val data: List<Pahlawan>) :
             namaTextView.text = pahlawan.nama
             asalTextView.text = pahlawan.asal
             sejarahTextView.text = pahlawan.sejarah
-//            imageView.setImageResource(pahlawan.imageResId)
+            imageView.setImageResource(pahlawan.imageResId)
 
             root.setOnClickListener {
                 val message = root.context.getString(R.string.message, pahlawan.nama)
