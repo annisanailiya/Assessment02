@@ -1,7 +1,12 @@
 package org.d3if3136.assessment02.ui
 
+import android.Manifest
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.view.*
+import androidx.annotation.RequiresApi
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -12,12 +17,14 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.launch
+import org.d3if3136.assessment02.MainActivity
 import org.d3if3136.assessment02.MainAdapter
 import org.d3if3136.assessment02.model.Pahlawan
 import org.d3if3136.assessment02.R
 import org.d3if3136.assessment02.data.SettingDataStore
 import org.d3if3136.assessment02.data.dataStore
 import org.d3if3136.assessment02.databinding.FragmentListBinding
+import org.d3if3136.assessment02.network.ApiStatus
 
 class ListFragment : Fragment() {
 
@@ -32,7 +39,6 @@ class ListFragment : Fragment() {
     private lateinit var binding: FragmentListBinding
     private lateinit var myAdapter: MainAdapter
     private var isLinearLayout = true
-//    private lateinit var layoutDataStore: SettingDataStore
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -61,6 +67,31 @@ class ListFragment : Fragment() {
 
         viewModel.getData().observe(viewLifecycleOwner) {
             myAdapter.updateData(it)
+        }
+
+        viewModel.getStatus().observe(viewLifecycleOwner) {
+            updateProgress(it)
+        }
+
+        viewModel.scheduleUpdater(requireActivity().application)
+    }
+
+    private fun updateProgress(status: ApiStatus) {
+        when (status) {
+            ApiStatus.LOADING -> {
+                binding.progressBar.visibility = View.VISIBLE
+            }
+            ApiStatus.SUCCESS -> {
+                binding.progressBar.visibility = View.GONE
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    requestNotificationPermission()
+                }
+            }
+            ApiStatus.FAILED -> {
+                binding.progressBar.visibility = View.GONE
+                binding.networkError.visibility = View.VISIBLE
+            }
         }
     }
 
@@ -92,6 +123,21 @@ class ListFragment : Fragment() {
             return true
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
+    private fun requestNotificationPermission() {
+        if (ActivityCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.POST_NOTIFICATIONS
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+                MainActivity.PERMISSION_REQUEST_CODE
+            )
+        }
     }
 }
 

@@ -4,8 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import org.d3if3136.assessment02.databinding.ListItemBinding
 import org.d3if3136.assessment02.model.Pahlawan
+import org.d3if3136.assessment02.network.PahlawanApi
 
 class MainAdapter : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
@@ -25,11 +27,15 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
             namaTextView.text = pahlawan.nama
             asalTextView.text = pahlawan.asal
             sejarahTextView.text = pahlawan.sejarah
-            imageView.setImageResource(pahlawan.imageResId)
+            Glide.with(imageView.context)
+                .load(PahlawanApi.getPahlawanUrl(pahlawan.imageResId))
+                .error(R.drawable.baseline_broken_image_24)
+                .into(imageView)
 
             root.setOnClickListener {
                 val message = root.context.getString(R.string.message, pahlawan.nama)
-                Toast.makeText(root.context, message, Toast.LENGTH_LONG).show() }
+                Toast.makeText(root.context, message, Toast.LENGTH_LONG).show()
+            }
         }
     }
 

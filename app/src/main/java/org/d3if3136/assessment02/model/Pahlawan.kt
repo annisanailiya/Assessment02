@@ -4,5 +4,5 @@ data class Pahlawan(
     val nama: String,
     val asal: String,
     val sejarah: String,
-    val imageResId: Int
+    val imageResId: String
 )
