@@ -1,10 +1,15 @@
 package org.d3if3136.assessment02.ui
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import org.d3if3136.assessment02.R
 import org.d3if3136.assessment02.model.Pahlawan
+import org.d3if3136.assessment02.network.PahlawanApi
 
 class ListViewModel : ViewModel() {
 
@@ -12,6 +17,18 @@ class ListViewModel : ViewModel() {
 
     init {
         data.value = initData()
+        retrieveData()
+    }
+
+    private fun retrieveData() {
+        viewModelScope.launch (Dispatchers.IO) {
+            try {
+                val result = PahlawanApi.service.getPahlawan()
+                Log.d("ListViewModel", "Success: $result")
+            } catch (e: Exception) {
+                Log.d("ListViewModel", "Failure: ${e.message}")
+            }
+        }
     }
 
     private fun initData(): List<Pahlawan> {

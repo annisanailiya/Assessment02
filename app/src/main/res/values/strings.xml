@@ -22,4 +22,5 @@
     <string name="bagikan">Bagikan Riwayat</string>
     <string name="bagikan_template">%1$s,
     Mengenal 10 Pahlawan Indonesia : Dr. Ir. Soekarno, Dr. Mohammad Hatta, Sultan Muhammad Hasanuddin, Tjoet Nyak Dhien, Raden Mas Ontowiryo Diponegoro, Ibrahim Datuk Tan Malaka, Raden Mas Soewardi Soerjaningrat, Raden Adjeng Kartini, Teuku Umar, Haji Agus Salim bin Abdullah Al-Malik Al-Husaini</string>
+    <string name="switch_layout">Ubah tampilan</string>
 </resources>
