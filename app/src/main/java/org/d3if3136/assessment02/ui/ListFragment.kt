@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -20,7 +21,12 @@ import org.d3if3136.assessment02.databinding.FragmentListBinding
 
 class ListFragment : Fragment() {
 
+    private val viewModel: ListViewModel by lazy {
+        ViewModelProvider(this)[ListViewModel::class.java]
+    }
+
     private lateinit var binding: FragmentListBinding
+    private lateinit var myAdapter: MainAdapter
     private var isLinearLayoutManager = true
     private lateinit var layoutDataStore: SettingDataStore
 
@@ -29,29 +35,15 @@ class ListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentListBinding.inflate(layoutInflater, container, false)
+        myAdapter = MainAdapter()
 
         with(binding.recyclerView) {
             addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
-            adapter = MainAdapter(getData())
+            adapter = myAdapter
             setHasFixedSize(true)
         }
         setHasOptionsMenu(true)
         return binding.root
-    }
-
-    private fun getData(): List<Pahlawan> {
-        return listOf(
-            Pahlawan("Soekarno ", "Surabaya, Jawa Timur", "Soekarno adalah Proklamator Kemerdekaan Indone...", R.drawable.soekarno),
-            Pahlawan("Mohammad Hatta", "Bukittinggi, Sumatera Barat", "Muhammad Hatta, atau Dr. Mohammad Hatta, ad...", R.drawable.mohammadhatta),
-            Pahlawan("Sultan Hasanuddin", "Gowa, Sulawesi Selatan", "Sultan Hasanuddin adalah pahlawan nasional ...", R.drawable.sultanhasanuddin),
-            Pahlawan("Cut Nyak Dien", "Aceh, Sumatera Utara", "Cut Nyak Dien adalah pahlawan nasional Indones...", R.drawable.cutnyakdien),
-            Pahlawan("Diponegoro", "Yogyakarta, Jawa Tengah", "Diponegoro adalah pahlawan nasional Indones...", R.drawable.diponegoro),
-            Pahlawan("Tan Malaka", "Pandan Gadang, Sumatera Barat", "Tan Malaka adalah seorang tokoh revolusione...", R.drawable.tanmalaka),
-            Pahlawan("Ki Hajar Dewantara", "Yogyakarta, Jawa Tengah", "Ki Hajar Dewantara adalah seorang pendidik ...", R.drawable.kihajardewantara),
-            Pahlawan("RA. Kartini", "Jepara, Jawa Tengah", "R.A. Kartini adalah seorang pahlawan nasion...", R.drawable.rakartini),
-            Pahlawan("Teuku Umar", "Meulaboh, Aceh", "Teuku Umar adalah pahlawan nasional Indones...", R.drawable.teukuumar),
-            Pahlawan("Agus Salim", "Padang Panjang, Sumatera Barat", "Agus Salim adalah seorang tokoh nasional In...", R.drawable.agusalim),
-        )
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -64,10 +56,27 @@ class ListFragment : Fragment() {
                 chooseLayout()
                 activity?.invalidateOptionsMenu()
             }
-//        viewModel.getData().observe(viewLifecycleOwner) {
-//            myAdapter.updateData(it)
-//        }
+
+        viewModel.getData().observe(viewLifecycleOwner) {
+            myAdapter.updateData(it)
+        }
     }
+
+//    private fun getData(): List<Pahlawan> {
+//        return listOf(
+//            Pahlawan("Soekarno ", "Surabaya, Jawa Timur", "Soekarno adalah Proklamator Kemerdekaan Indone...", R.drawable.soekarno),
+//            Pahlawan("Mohammad Hatta", "Bukittinggi, Sumatera Barat", "Muhammad Hatta, atau Dr. Mohammad Hatta, ad...", R.drawable.mohammadhatta),
+//            Pahlawan("Sultan Hasanuddin", "Gowa, Sulawesi Selatan", "Sultan Hasanuddin adalah pahlawan nasional ...", R.drawable.sultanhasanuddin),
+//            Pahlawan("Cut Nyak Dien", "Aceh, Sumatera Utara", "Cut Nyak Dien adalah pahlawan nasional Indones...", R.drawable.cutnyakdien),
+//            Pahlawan("Diponegoro", "Yogyakarta, Jawa Tengah", "Diponegoro adalah pahlawan nasional Indones...", R.drawable.diponegoro),
+//            Pahlawan("Tan Malaka", "Pandan Gadang, Sumatera Barat", "Tan Malaka adalah seorang tokoh revolusione...", R.drawable.tanmalaka),
+//            Pahlawan("Ki Hajar Dewantara", "Yogyakarta, Jawa Tengah", "Ki Hajar Dewantara adalah seorang pendidik ...", R.drawable.kihajardewantara),
+//            Pahlawan("RA. Kartini", "Jepara, Jawa Tengah", "R.A. Kartini adalah seorang pahlawan nasion...", R.drawable.rakartini),
+//            Pahlawan("Teuku Umar", "Meulaboh, Aceh", "Teuku Umar adalah pahlawan nasional Indones...", R.drawable.teukuumar),
+//            Pahlawan("Agus Salim", "Padang Panjang, Sumatera Barat", "Agus Salim adalah seorang tokoh nasional In...", R.drawable.agusalim),
+//        )
+//    }
+
 
     private fun chooseLayout() {
         if (isLinearLayoutManager) {

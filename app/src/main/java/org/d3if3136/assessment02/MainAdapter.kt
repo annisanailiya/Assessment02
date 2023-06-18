@@ -7,8 +7,15 @@ import androidx.recyclerview.widget.RecyclerView
 import org.d3if3136.assessment02.databinding.ListItemBinding
 import org.d3if3136.assessment02.model.Pahlawan
 
-class MainAdapter(private val data: List<Pahlawan>) :
-    RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+class MainAdapter : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+
+    private val data = mutableListOf<Pahlawan>()
+
+    fun updateData(newData: List<Pahlawan>) {
+        data.clear()
+        data.addAll(newData)
+        notifyDataSetChanged()
+    }
 
     class ViewHolder(
         private val binding: ListItemBinding) :
